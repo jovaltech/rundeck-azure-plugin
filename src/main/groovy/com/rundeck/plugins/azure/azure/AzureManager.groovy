@@ -123,10 +123,10 @@ class AzureManager {
         def vms = azure.virtualMachines()
 
         if(async) {
-            vms.powerOffAsync(resourceGroup, name).await()
+            vms.deallocateAsync(resourceGroup, name).await()
 
         }else{
-            vms.powerOff(resourceGroup, name)
+            vms.deallocate(resourceGroup, name)
         }
     }
 
